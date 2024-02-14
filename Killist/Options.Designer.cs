@@ -42,20 +42,22 @@
 			this.toolStripMenuItem_exit = new System.Windows.Forms.ToolStripMenuItem();
 			this.label_processName = new System.Windows.Forms.Label();
 			this.checkBox_instaKill = new System.Windows.Forms.CheckBox();
+			this.link_github = new System.Windows.Forms.LinkLabel();
+			this.label_processesList = new System.Windows.Forms.Label();
 			this.contextMenu_tray.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// listBox_processes
 			// 
 			this.listBox_processes.FormattingEnabled = true;
-			this.listBox_processes.Location = new System.Drawing.Point(14, 12);
+			this.listBox_processes.Location = new System.Drawing.Point(14, 26);
 			this.listBox_processes.Name = "listBox_processes";
 			this.listBox_processes.Size = new System.Drawing.Size(233, 134);
 			this.listBox_processes.TabIndex = 0;
 			// 
 			// textBox_process
 			// 
-			this.textBox_process.Location = new System.Drawing.Point(14, 167);
+			this.textBox_process.Location = new System.Drawing.Point(14, 181);
 			this.textBox_process.Name = "textBox_process";
 			this.textBox_process.Size = new System.Drawing.Size(164, 20);
 			this.textBox_process.TabIndex = 1;
@@ -63,7 +65,7 @@
 			// 
 			// button_add
 			// 
-			this.button_add.Location = new System.Drawing.Point(184, 166);
+			this.button_add.Location = new System.Drawing.Point(184, 180);
 			this.button_add.Name = "button_add";
 			this.button_add.Size = new System.Drawing.Size(63, 23);
 			this.button_add.TabIndex = 2;
@@ -73,7 +75,7 @@
 			// 
 			// button_remove
 			// 
-			this.button_remove.Location = new System.Drawing.Point(184, 195);
+			this.button_remove.Location = new System.Drawing.Point(184, 209);
 			this.button_remove.Name = "button_remove";
 			this.button_remove.Size = new System.Drawing.Size(63, 24);
 			this.button_remove.TabIndex = 3;
@@ -127,16 +129,16 @@
 			// label_processName
 			// 
 			this.label_processName.AutoSize = true;
-			this.label_processName.Location = new System.Drawing.Point(11, 151);
+			this.label_processName.Location = new System.Drawing.Point(11, 165);
 			this.label_processName.Name = "label_processName";
-			this.label_processName.Size = new System.Drawing.Size(140, 13);
+			this.label_processName.Size = new System.Drawing.Size(216, 13);
 			this.label_processName.TabIndex = 7;
-			this.label_processName.Text = "Process name (without .exe)";
+			this.label_processName.Text = "Process Name (without .exe, Case sensitive)";
 			// 
 			// checkBox_instaKill
 			// 
 			this.checkBox_instaKill.AutoSize = true;
-			this.checkBox_instaKill.Location = new System.Drawing.Point(14, 200);
+			this.checkBox_instaKill.Location = new System.Drawing.Point(14, 214);
 			this.checkBox_instaKill.Name = "checkBox_instaKill";
 			this.checkBox_instaKill.Size = new System.Drawing.Size(125, 17);
 			this.checkBox_instaKill.TabIndex = 8;
@@ -144,11 +146,33 @@
 			this.checkBox_instaKill.UseVisualStyleBackColor = true;
 			this.checkBox_instaKill.CheckedChanged += new System.EventHandler(this.checkBox_instaKill_CheckedChanged);
 			// 
+			// link_github
+			// 
+			this.link_github.AutoSize = true;
+			this.link_github.Location = new System.Drawing.Point(207, 10);
+			this.link_github.Name = "link_github";
+			this.link_github.Size = new System.Drawing.Size(40, 13);
+			this.link_github.TabIndex = 9;
+			this.link_github.TabStop = true;
+			this.link_github.Text = "GitHub";
+			this.link_github.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_github_LinkClicked);
+			// 
+			// label_processesList
+			// 
+			this.label_processesList.AutoSize = true;
+			this.label_processesList.Location = new System.Drawing.Point(12, 10);
+			this.label_processesList.Name = "label_processesList";
+			this.label_processesList.Size = new System.Drawing.Size(75, 13);
+			this.label_processesList.TabIndex = 10;
+			this.label_processesList.Text = "Processes List";
+			// 
 			// Options
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(258, 231);
+			this.ClientSize = new System.Drawing.Size(258, 243);
+			this.Controls.Add(this.label_processesList);
+			this.Controls.Add(this.link_github);
 			this.Controls.Add(this.checkBox_instaKill);
 			this.Controls.Add(this.label_processName);
 			this.Controls.Add(this.button_remove);
@@ -184,6 +208,8 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_enabled;
 		private System.Windows.Forms.Label label_processName;
 		private System.Windows.Forms.CheckBox checkBox_instaKill;
+		private System.Windows.Forms.LinkLabel link_github;
+		private System.Windows.Forms.Label label_processesList;
 	}
 }
 

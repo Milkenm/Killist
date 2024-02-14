@@ -171,5 +171,10 @@ namespace Killist
 		{
 			this.SaveSettings();
 		}
+
+		private void link_github_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("https://github.com/Milkenm/Killist/");
+		}
 	}
 }
