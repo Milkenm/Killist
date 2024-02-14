@@ -90,7 +90,20 @@ namespace Killist
 			Settings.Default.Save();
 		}
 
+		private void textBox_process_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				this.AddProcessName();
+			}
+		}
+
 		private void button_add_Click(object sender, EventArgs e)
+		{
+			this.AddProcessName();
+		}
+
+		private void AddProcessName()
 		{
 			// Trim user input
 			string newProcess = this.textBox_process.Text.Trim();
@@ -102,6 +115,9 @@ namespace Killist
 
 			// Add process to the list
 			this.listBox_processes.Items.Add(newProcess);
+
+			// Clear the text box
+			this.textBox_process.Text = string.Empty;
 
 			// Save
 			this.SaveSettings();

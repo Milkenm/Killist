@@ -58,6 +58,7 @@
 			this.textBox_process.Name = "textBox_process";
 			this.textBox_process.Size = new System.Drawing.Size(164, 20);
 			this.textBox_process.TabIndex = 1;
+			this.textBox_process.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_process_KeyDown);
 			// 
 			// button_add
 			// 
