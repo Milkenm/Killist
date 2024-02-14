@@ -14,7 +14,6 @@ namespace Killist
 	public partial class Options : Form
 	{
 		private Thread _killThread;
-		private int _timer;
 		private bool _isEnabled = true;
 
 		public Options()
@@ -28,24 +27,15 @@ namespace Killist
 
 		private void Main_Load(object sender, EventArgs e)
 		{
-			this._killThread = new Thread(async () =>
+			this._killThread = new Thread(() =>
 			{
 				while (true)
 				{
-					await Task.Delay(1);
+					Thread.Sleep(1);
 
 					if (this._isEnabled && this.listBox_processes.Items.Count > 0)
 					{
-						this._timer++;
-
-						Debug.WriteLine(this._timer + " / " + (this._timer / 1000));
-
-						if ((this._timer / 1000) >= Settings.Default.SecondsDelay)
-						{
-							this._timer = 0;
-
-							this.KillerThread();
-						}
+						this.KillerThread();
 					}
 				}
 			});
@@ -87,24 +77,15 @@ namespace Killist
 			{
 				this.listBox_processes.Items.Add(processName);
 			}
-
-			this.numeric_delay.Value = Settings.Default.SecondsDelay;
 		}
 
 		private void SaveSettings()
 		{
-			if (Settings.Default.SecondsDelay != this.numeric_delay.Value)
-			{
-				this._timer = 0;
-			}
-
 			Settings.Default.ProcessesList.Clear();
 			foreach (string processName in this.listBox_processes.Items)
 			{
 				Settings.Default.ProcessesList.Add(processName);
 			}
-
-			Settings.Default.SecondsDelay = (int)this.numeric_delay.Value;
 
 			Settings.Default.Save();
 		}
@@ -157,11 +138,6 @@ namespace Killist
 		private void toolStripMenuItem_enabled_Click(object sender, EventArgs e)
 		{
 			this._isEnabled = !this.toolStripMenuItem_enabled.Checked;
-
-			if (!this._isEnabled)
-			{
-				this._timer = 0;
-			}
 
 			this.toolStripMenuItem_enabled.Checked = this._isEnabled;
 		}

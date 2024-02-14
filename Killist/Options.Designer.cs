@@ -41,31 +41,27 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripMenuItem_exit = new System.Windows.Forms.ToolStripMenuItem();
 			this.label1 = new System.Windows.Forms.Label();
-			this.numeric_delay = new System.Windows.Forms.NumericUpDown();
-			this.label_seconds = new System.Windows.Forms.Label();
-			this.label_runEvery = new System.Windows.Forms.Label();
 			this.contextMenu_tray.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numeric_delay)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// listBox_processes
 			// 
 			this.listBox_processes.FormattingEnabled = true;
-			this.listBox_processes.Location = new System.Drawing.Point(14, 13);
+			this.listBox_processes.Location = new System.Drawing.Point(14, 12);
 			this.listBox_processes.Name = "listBox_processes";
 			this.listBox_processes.Size = new System.Drawing.Size(233, 134);
 			this.listBox_processes.TabIndex = 0;
 			// 
 			// textBox_process
 			// 
-			this.textBox_process.Location = new System.Drawing.Point(14, 168);
+			this.textBox_process.Location = new System.Drawing.Point(14, 167);
 			this.textBox_process.Name = "textBox_process";
 			this.textBox_process.Size = new System.Drawing.Size(164, 20);
 			this.textBox_process.TabIndex = 1;
 			// 
 			// button_add
 			// 
-			this.button_add.Location = new System.Drawing.Point(184, 167);
+			this.button_add.Location = new System.Drawing.Point(184, 166);
 			this.button_add.Name = "button_add";
 			this.button_add.Size = new System.Drawing.Size(63, 23);
 			this.button_add.TabIndex = 2;
@@ -75,7 +71,7 @@
 			// 
 			// button_remove
 			// 
-			this.button_remove.Location = new System.Drawing.Point(184, 196);
+			this.button_remove.Location = new System.Drawing.Point(184, 195);
 			this.button_remove.Name = "button_remove";
 			this.button_remove.Size = new System.Drawing.Size(63, 24);
 			this.button_remove.TabIndex = 3;
@@ -129,61 +125,18 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(11, 152);
+			this.label1.Location = new System.Drawing.Point(11, 151);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(140, 13);
 			this.label1.TabIndex = 7;
 			this.label1.Text = "Process name (without .exe)";
 			// 
-			// numeric_delay
-			// 
-			this.numeric_delay.Location = new System.Drawing.Point(85, 231);
-			this.numeric_delay.Maximum = new decimal(new int[] {
-            86400,
-            0,
-            0,
-            0});
-			this.numeric_delay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.numeric_delay.Name = "numeric_delay";
-			this.numeric_delay.Size = new System.Drawing.Size(99, 20);
-			this.numeric_delay.TabIndex = 4;
-			this.numeric_delay.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			// 
-			// label_seconds
-			// 
-			this.label_seconds.AutoSize = true;
-			this.label_seconds.Location = new System.Drawing.Point(190, 233);
-			this.label_seconds.Name = "label_seconds";
-			this.label_seconds.Size = new System.Drawing.Size(47, 13);
-			this.label_seconds.TabIndex = 5;
-			this.label_seconds.Text = "seconds";
-			// 
-			// label_runEvery
-			// 
-			this.label_runEvery.AutoSize = true;
-			this.label_runEvery.Location = new System.Drawing.Point(23, 233);
-			this.label_runEvery.Name = "label_runEvery";
-			this.label_runEvery.Size = new System.Drawing.Size(56, 13);
-			this.label_runEvery.TabIndex = 6;
-			this.label_runEvery.Text = "Run every";
-			// 
 			// Options
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(258, 265);
+			this.ClientSize = new System.Drawing.Size(258, 231);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.label_runEvery);
-			this.Controls.Add(this.label_seconds);
-			this.Controls.Add(this.numeric_delay);
 			this.Controls.Add(this.button_remove);
 			this.Controls.Add(this.button_add);
 			this.Controls.Add(this.textBox_process);
@@ -198,7 +151,6 @@
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.Shown += new System.EventHandler(this.Main_Shown);
 			this.contextMenu_tray.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.numeric_delay)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -217,9 +169,6 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_exit;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_enabled;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.NumericUpDown numeric_delay;
-		private System.Windows.Forms.Label label_seconds;
-		private System.Windows.Forms.Label label_runEvery;
 	}
 }
 

@@ -33,17 +33,5 @@ namespace Killist.Properties {
                 this["ProcessesList"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int SecondsDelay {
-            get {
-                return ((int)(this["SecondsDelay"]));
-            }
-            set {
-                this["SecondsDelay"] = value;
-            }
-        }
     }
 }
