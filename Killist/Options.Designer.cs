@@ -40,7 +40,8 @@
 			this.toolStripMenuItem_settings = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripMenuItem_exit = new System.Windows.Forms.ToolStripMenuItem();
-			this.label1 = new System.Windows.Forms.Label();
+			this.label_processName = new System.Windows.Forms.Label();
+			this.checkBox_instaKill = new System.Windows.Forms.CheckBox();
 			this.contextMenu_tray.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -123,21 +124,33 @@
 			this.toolStripMenuItem_exit.Text = "Exit";
 			this.toolStripMenuItem_exit.Click += new System.EventHandler(this.toolStripMenuItem_exit_Click);
 			// 
-			// label1
+			// label_processName
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(11, 151);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(140, 13);
-			this.label1.TabIndex = 7;
-			this.label1.Text = "Process name (without .exe)";
+			this.label_processName.AutoSize = true;
+			this.label_processName.Location = new System.Drawing.Point(11, 151);
+			this.label_processName.Name = "label_processName";
+			this.label_processName.Size = new System.Drawing.Size(140, 13);
+			this.label_processName.TabIndex = 7;
+			this.label_processName.Text = "Process name (without .exe)";
+			// 
+			// checkBox_instaKill
+			// 
+			this.checkBox_instaKill.AutoSize = true;
+			this.checkBox_instaKill.Location = new System.Drawing.Point(14, 200);
+			this.checkBox_instaKill.Name = "checkBox_instaKill";
+			this.checkBox_instaKill.Size = new System.Drawing.Size(125, 17);
+			this.checkBox_instaKill.TabIndex = 8;
+			this.checkBox_instaKill.Text = "InstaKill (CPU heavy)";
+			this.checkBox_instaKill.UseVisualStyleBackColor = true;
+			this.checkBox_instaKill.CheckedChanged += new System.EventHandler(this.checkBox_instaKill_CheckedChanged);
 			// 
 			// Options
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(258, 231);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.checkBox_instaKill);
+			this.Controls.Add(this.label_processName);
 			this.Controls.Add(this.button_remove);
 			this.Controls.Add(this.button_add);
 			this.Controls.Add(this.textBox_process);
@@ -169,7 +182,8 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_exit;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_enabled;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label_processName;
+		private System.Windows.Forms.CheckBox checkBox_instaKill;
 	}
 }
 

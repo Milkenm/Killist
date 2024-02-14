@@ -33,5 +33,17 @@ namespace Killist.Properties {
                 this["ProcessesList"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool InstaKill {
+            get {
+                return ((bool)(this["InstaKill"]));
+            }
+            set {
+                this["InstaKill"] = value;
+            }
+        }
     }
 }

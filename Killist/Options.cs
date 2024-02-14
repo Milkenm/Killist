@@ -13,7 +13,7 @@ namespace Killist
 {
 	public partial class Options : Form
 	{
-		private Thread _killThread;
+		private Task _killTask;
 		private bool _isEnabled = true;
 
 		public Options()
@@ -27,11 +27,11 @@ namespace Killist
 
 		private void Main_Load(object sender, EventArgs e)
 		{
-			this._killThread = new Thread(() =>
+			this._killTask = new Task(async () =>
 			{
 				while (true)
 				{
-					Thread.Sleep(1);
+					await Task.Delay(checkBox_instaKill.Checked ? 1 : 1000);
 
 					if (this._isEnabled && this.listBox_processes.Items.Count > 0)
 					{
@@ -39,7 +39,7 @@ namespace Killist
 					}
 				}
 			});
-			this._killThread.Start();
+			this._killTask.Start();
 		}
 
 		private void Main_Shown(object sender, EventArgs e)
@@ -77,6 +77,8 @@ namespace Killist
 			{
 				this.listBox_processes.Items.Add(processName);
 			}
+
+			checkBox_instaKill.Checked = Settings.Default.InstaKill;
 		}
 
 		private void SaveSettings()
@@ -86,6 +88,8 @@ namespace Killist
 			{
 				Settings.Default.ProcessesList.Add(processName);
 			}
+
+			Settings.Default.InstaKill = checkBox_instaKill.Checked;
 
 			Settings.Default.Save();
 		}
@@ -161,6 +165,11 @@ namespace Killist
 		private void toolStripMenuItem_exit_Click(object sender, EventArgs e)
 		{
 			Environment.Exit(0);
+		}
+
+		private void checkBox_instaKill_CheckedChanged(object sender, EventArgs e)
+		{
+			this.SaveSettings();
 		}
 	}
 }
